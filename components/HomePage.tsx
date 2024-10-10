@@ -1,5 +1,5 @@
 import { useState } from 'react'
-import { ChevronRight, Globe, Package, Truck, Plus, Minus, Send, Phone, Menu, X } from 'lucide-react'
+import {Globe, Package, Truck, Plus, Minus, Send, Phone, Menu } from 'lucide-react'
 import { Button } from "@/components/ui/button"
 import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet"
 import NewsSlider from './NewsSlider'
@@ -13,7 +13,7 @@ export default function HomePage() {
   const [contactName, setContactName] = useState('')
   const [contactEmail, setContactEmail] = useState('')
   const [contactMessage, setContactMessage] = useState('')
-  const [isMenuOpen, setIsMenuOpen] = useState(false)
+//   const [isMenuOpen, setIsMenuOpen] = useState(false)
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault()
