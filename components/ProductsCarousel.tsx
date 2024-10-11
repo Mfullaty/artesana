@@ -90,11 +90,16 @@ export default function ProductCarousel({ products }: ProductCarouselProps) {
   const handleDragEnd = () => {
     setIsDragging(false)
     setIsAutoPlaying(true)
-    if (Math.abs(translate) > 100) {
+    const threshold = slideWidth / 3 // Adjust based on desired sensitivity
+    if (Math.abs(translate) > threshold) {
       if (translate > 0) {
-        prevSlide()
+        // Swiped left (or right on touch) - Move to the next slide
+        setCurrentIndex((prevIndex) =>
+          (prevIndex === 0 ? products.length - slidesToShow : prevIndex) - 1
+        )
       } else {
-        nextSlide()
+        // Swiped right (or left on touch) - Move to the previous slide
+        setCurrentIndex((prevIndex) => (prevIndex + 1) % products.length)
       }
     }
     setTranslate(0)
@@ -102,7 +107,7 @@ export default function ProductCarousel({ products }: ProductCarouselProps) {
 
   return (
     <div
-      className="relative w-full py-8 my-8"
+      className="relative w-full py-8 my-8 select-none"
       onMouseEnter={() => setIsAutoPlaying(false)}
       onMouseLeave={() => setIsAutoPlaying(true)}
       ref={carouselRef}
@@ -136,7 +141,8 @@ export default function ProductCarousel({ products }: ProductCarouselProps) {
                   <img
                     src={product.image}
                     alt={product.name}
-                    className="w-full h-48 object-cover rounded-md"
+                    className="w-full h-48 object-cover rounded-md select-none"
+                    draggable={false}
                   />
                   <h3 className="text-lg font-semibold mt-4">{product.name}</h3>
                   <p className="text-muted-foreground mt-2">
