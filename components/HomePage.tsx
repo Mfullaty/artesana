@@ -382,7 +382,7 @@ export default function HomePage() {
       <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
         <div className="bg-white rounded-lg shadow-md p-8 max-w-2xl mx-auto">
           <h2 className="text-3xl font-bold text-gray-900 mb-6 text-center">
-            Get in Touch
+            Subscribe to us
           </h2>
           <form onSubmit={handleSubmit}>
             <div className="mb-4">

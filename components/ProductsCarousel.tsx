@@ -104,7 +104,7 @@ export default function ProductCarousel({ products }: ProductCarouselProps) {
               className="w-full px-4"
               style={{ width: `${100 / slidesToShow}%` }}
             >
-              <Card className="transform transition-all duration-700 ease-in-out hover:scale-105 my-4">
+              <Card className="transform transition-all duration-700 ease-in-out hover:scale-105 my-4 cursor-pointer">
                 <CardContent className="p-4">
                   <img
                     src={product.image}
