@@ -153,7 +153,7 @@ export default function ProductCarousel({ products }: ProductCarouselProps) {
               style={{ width: `${100 / products.length}%` }}
             >
               <Card className="transform transition-all duration-300 ease-in-out hover:scale-105 my-2 sm:my-3 md:my-4 cursor-pointer">
-                <CardContent className="p-2 sm:p-3 md:p-4">
+                <CardContent className="p-4">
                   <img
                     src={product.image}
                     alt={product.name}
